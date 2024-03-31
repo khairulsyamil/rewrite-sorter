@@ -1,0 +1,32 @@
+---
+type: specs.openrewrite.org/v1beta/recipe
+name: me.khairulsyamil.openrewrite.DefaultStandardisation
+recipeList:
+  - me.khairulsyamil.openrewrite.properties.PropertiesSorter:
+      filePattern: "**/{messages,errors}.properties"
+  - me.khairulsyamil.openrewrite.json.JsonSorter:
+      filePattern: "**/app.messages.json"
+  - me.khairulsyamil.openrewrite.java.JavaMethodSorter
+  - org.openrewrite.java.format.RemoveTrailingWhitespace
+  - org.openrewrite.staticanalysis.UseJavaStyleArrayDeclarations
+  - org.openrewrite.staticanalysis.RemoveExtraSemicolons
+  - org.openrewrite.staticanalysis.DefaultComesLast
+  - org.openrewrite.staticanalysis.EmptyBlock
+  - org.openrewrite.java.format.EmptyNewlineAtEndOfFile
+  - org.openrewrite.staticanalysis.ForLoopControlVariablePostfixOperators
+  - org.openrewrite.staticanalysis.FinalizePrivateFields
+  - org.openrewrite.java.format.NoWhitespaceAfter
+  - org.openrewrite.java.format.NoWhitespaceBefore
+  - org.openrewrite.java.format.PadEmptyForLoopComponents
+  - org.openrewrite.staticanalysis.TypecastParenPad
+  - org.openrewrite.staticanalysis.EqualsAvoidsNull
+  - org.openrewrite.staticanalysis.ExplicitInitialization
+  - org.openrewrite.staticanalysis.FallThrough
+  - org.openrewrite.staticanalysis.HideUtilityClassConstructor
+  - org.openrewrite.staticanalysis.NeedBraces
+  - org.openrewrite.staticanalysis.OperatorWrap
+  - org.openrewrite.staticanalysis.UnnecessaryParentheses
+  - org.openrewrite.staticanalysis.ReplaceThreadRunWithThreadStart
+  - org.openrewrite.staticanalysis.ChainStringBuilderAppendCalls
+  - org.openrewrite.staticanalysis.ReplaceStringBuilderWithString
+  - org.openrewrite.java.ShortenFullyQualifiedTypeReferences
